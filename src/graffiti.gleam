@@ -17,14 +17,6 @@ pub fn app(
   App(title: option.None, init:, update:, render:, source: fn(_) { [] })
 }
 
-pub fn new(
-  init: Init(model, msg),
-  update: Update(model, msg),
-  render: Render(model),
-) -> App(model, msg) {
-  App(title: option.None, init:, update:, render:, source: fn(_) { [] })
-}
-
 pub fn title(app: App(model, msg), of content: String) -> App(model, msg) {
   App(..app, title: option.Some(content))
 }
