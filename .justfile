@@ -1,5 +1,3 @@
-installed := path_exists('terminil')
-
 install:
     #!/usr/bin/env bash
     if [ ! -d 'terminil' ]; then
