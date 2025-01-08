@@ -6,8 +6,8 @@ import graffiti/command
 import graffiti/subscription
 import terminil
 
-// A command can be used to control among other thing, the application's
-// runtime and the terminal window.
+// A command can be used to control among other things, the application's
+// runtime, and the terminal window.
 type Cmd =
   graffiti.Cmd(Msg)
 
@@ -38,7 +38,7 @@ fn init() -> #(Model, Cmd) {
 }
 
 pub fn main() {
-  // enabling "raw mode" is required if you want to access the user's
+  // Enabling "raw mode" is required if you want to access the user's
   // keypresses as they come in, try removing this line and see what
   // happens. By default the terminal is in "cooked mode" which basically
   // means that the terminal will handle the user's input, until for example,
@@ -68,7 +68,7 @@ pub fn render(model: Model) -> String {
   "Times ticked: " <> int.to_string(model.tick)
 }
 
-// A basic subription that continually reads terminal input (keypresses)
+// A basic subscription that continually reads terminal input (keypresses)
 // and essentially maps them to optional messages (your `Msg` type).
 //
 // `Some(msg)` will be yielded to the runtime, while `None` will cause the
