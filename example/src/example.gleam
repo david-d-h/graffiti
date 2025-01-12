@@ -5,6 +5,7 @@ import graffiti
 import graffiti/command
 import graffiti/subscription
 import terminil
+import terminil/cursor
 
 // A command can be used to control among other things, the application's
 // runtime, and the terminal window.
@@ -34,6 +35,7 @@ type Msg {
 fn init() -> #(Model, Cmd) {
   #(Model(tick: 0, enabled: False), [
     command.terminal(terminil.enter_alternate_screen),
+    command.terminal(cursor.hide),
   ])
 }
 
